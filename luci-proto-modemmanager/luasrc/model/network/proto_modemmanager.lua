@@ -1,4 +1,5 @@
 -- Copyright 2018 Nicholas Smith <mips171@icloud.com>
+-- Adapted from luci-proto-qmi
 -- Licensed to the public under the GNU GPL v2.0.
 
 local netmod = luci.model.network
