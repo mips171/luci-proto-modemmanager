@@ -11,9 +11,11 @@ local auth, ipv6
 device = section:taboption("general", Value, "device", translate("Modem device"))
 device.rmempty = false
 
---local device_suggestions = nixio.fs.glob("/sys/devices/platform/1e1c0000.xhci/usb2/2-*")
+
 -- Supports only one modem that has already been registered by MM.  Ensures the modem is usable.
 local device_suggestions = io.popen("mmcli -m 0 | grep 'device: ' | grep -Eo '/sys/devices/.*' | tr -d \"'\"", "r")
+-- Here are a couple of other ways to do this and possibly support more devices.  Note: realpath should be added to BusyBox.
+--local device_suggestions = nixio.fs.glob("/sys/devices/platform/1e1c0000.xhci/usb2/2-*")
 --local handle = io.popen("realpath /sys/class/net/wwan0/device", "r")
 local device_suggestions = handle:read("*l")
 handle:close()
