@@ -37,14 +37,14 @@ username = section:taboption("general", Value, "username", translate("PAP/CHAP u
 password = section:taboption("general", Value, "password", translate("PAP/CHAP password"))
 password.password = true
 
-auth = section:taboption("general", Value, "auth", translate("Authentication Type"))
+auth = section:taboption("general", Value, "auth", translate("Authentication type"))
 auth:value("", translate("-- Please choose --"))
 auth:value("both", "PAP/CHAP (both)")
 auth:value("pap", "PAP")
 auth:value("chap", "CHAP")
 auth:value("none", "NONE")
 
-iptype = section:taboption("general", Value, "iptype", translate("IP Connection Type"))
+iptype = section:taboption("general", Value, "iptype", translate("IP connection type"))
 iptype:value("", translate("-- Please choose --"))
 iptype:value("ipv4", "IPv4 only")
 iptype:value("ipv6", "IPv6 only")
