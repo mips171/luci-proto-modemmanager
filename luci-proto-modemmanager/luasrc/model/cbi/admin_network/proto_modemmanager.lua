@@ -7,12 +7,9 @@ local map, section, net = ...
 local device, apn, pincode, username, password
 local auth, ipv6
 
-
 device = section:taboption("general", Value, "device", translate("Modem device"))
 device.rmempty = false
 
---local handle = nixio.fs.glob("/sys/devices/platform/1e1c0000.xhci/usb2/2-*")
---local handle = io.popen("realpath /sys/class/net/wwan0/device", "r")
 -- Supports only one modem that has already been registered by MM.  Ensures the modem is usable.
 local handle = io.popen("mmcli -m 0 | grep 'device: ' | grep -Eo '/sys/devices/.*' | tr -d \"'\"", "r")
 local device_suggestions = handle:read("*l")
@@ -21,7 +18,6 @@ handle:close()
 if handle then
 	device:value(device_suggestions)
 end
-
 
 apn = section:taboption("general", Value, "apn", translate("APN"))
 apn:value("", translate("-- Please choose --"))
