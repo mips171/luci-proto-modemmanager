@@ -4,7 +4,7 @@
 
 local map, section, net = ...
 
-local device, apn, pincode, username, password
+local device, apn, pincode, username, password, iptype
 local auth, ipv6
 
 device = section:taboption("general", Value, "device", translate("Modem device"))
