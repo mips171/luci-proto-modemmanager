@@ -45,3 +45,5 @@ iptype:value("", translate("-- Please choose --"))
 iptype:value("ipv4", "IPv4 only")
 iptype:value("ipv6", "IPv6 only")
 iptype:value("ipv4v6", "IPv4/IPv6 (both - defaults to IPv4)")
+
+metric = section:taboption("general", Value, "metric", translate("Gateway metric"))
