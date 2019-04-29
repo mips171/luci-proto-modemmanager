@@ -13,7 +13,7 @@ function proto.ifname(self)
 	local base = netmod._M.protocol
 	local ifname = base.ifname(self) -- call base class "protocol.ifname(self)"
 
-		-- Note: ifname might be nil if the adapter could not be determined through ubus (default name to carrier-wan in this case)
+	-- Note: ifname might be nil if the adapter could not be determined through ubus (default name to carrier-wan in this case)
 	if ifname == nil then
 		ifname = "carrier-" .. self.sid
 	end

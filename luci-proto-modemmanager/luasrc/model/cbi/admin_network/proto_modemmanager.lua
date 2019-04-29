@@ -11,6 +11,7 @@ device = section:taboption("general", Value, "device", translate("Modem device")
 device.rmempty = false
 
 -- Supports only one modem that has already been registered by MM.  Ensures the modem is usable.
+-- Assumes modem is on index 0
 local handle = io.popen("mmcli -m 0 | grep 'device: ' | grep -Eo '/sys/devices/.*' | tr -d \"'\"", "r")
 local device_suggestions = handle:read("*l")
 handle:close()
@@ -20,11 +21,6 @@ if handle then
 end
 
 apn = section:taboption("general", Value, "apn", translate("APN"))
-apn:value("", translate("-- Please choose --"))
-apn:value("live.vodafone.com", "Vodafone: live.vodafone.com")
-apn:value("internet", "Telstra: internet")
-apn:value("telstra.internet", "Telstra: telstra.internet")
-apn:value("connect", "Optus: connect")
 
 pincode = section:taboption("general", Value, "pincode", translate("PIN"))
 
