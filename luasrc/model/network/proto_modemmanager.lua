@@ -1,5 +1,5 @@
--- Copyright 2018 Nicholas Smith <mips171@icloud.com>
--- Licensed to the public under the GNU GPL v2.0.
+-- Copyright 2019 Nicholas Smith <mips171@icloud.com>
+-- SPDX-License-Identifier: Apache-2.0
 
 local netmod = luci.model.network
 local interface = luci.model.network.interface
