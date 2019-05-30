@@ -1,4 +1,4 @@
--- Copyright 2019 Nicholas Smith <mips171@icloud.com>
+-- Copyright 2019 Telco Antennas Pty Ltd <nicholas.smith@telcoantennas.com.au>
 -- SPDX-License-Identifier: Apache-2.0
 
 local netmod = luci.model.network
