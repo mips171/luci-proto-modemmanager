@@ -15,10 +15,20 @@ This luci-protocol adds support to set up and configure basic options for a mode
 * `tr` (included in BusyBox by default)
 
 ## Install
-1. download the code
-1. place it under your LuCI `protocols` directory
-1. run `./scripts/feeds update -a && ./scripts/feeds install luci-proto-modemmanager` from your OpenWrt root directory
-1. enable in `menuconfig`
+1) Edit your feeds.conf and add the configuration of the new feed:
+```
+    $ vim feeds.conf
+        src-git luci-proto-modemmanager https://github.com/nickberry17/luci-proto-modemmanager.git
+```
+2) Update the feed:
+```
+    $ ./scripts/feeds update luci-proto-modemmanager
+```
+3) Install all packages from the feed:
+```
+    $ ./scripts/feeds install -p luci-proto-modemmanager -a
+```
+4) enable in `menuconfig`
 
 
 ## Download:
