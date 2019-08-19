@@ -18,15 +18,15 @@ This luci-protocol adds support to set up and configure basic options for a mode
 1) Edit your feeds.conf and add the configuration of the new feed:
 ```
     $ vim feeds.conf
-        src-git luci-proto-modemmanager https://github.com/nickberry17/luci-proto-modemmanager.git
+        src-git luci_proto_modemmanager https://github.com/nickberry17/luci-proto-modemmanager.git
 ```
 2) Update the feed:
 ```
-    $ ./scripts/feeds update luci-proto-modemmanager
+    $ ./scripts/feeds update luci_proto_modemmanager
 ```
 3) Install all packages from the feed:
 ```
-    $ ./scripts/feeds install -p luci-proto-modemmanager -a
+    $ ./scripts/feeds install -p luci_proto_modemmanager -a
 ```
 4) enable in `menuconfig`
 
