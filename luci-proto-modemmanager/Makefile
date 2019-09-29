@@ -16,6 +16,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=luci-proto-modemmanager
 PKG_RELEASE:=1
 
+PKG_SRC_DIR := $(shell pwd)
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
@@ -28,12 +29,14 @@ define Package/luci-proto-modemmanager
   DEPENDS:=+modemmanager
 endef
 
-define Package/luci-proto-openconnect/description
-	luci protocol interface for ModemManager
+define Package/luci-proto-modemmanager/description
+	LuCI protocol interface for ModemManager
 endef
 
-
 define Build/Prepare
+       mkdir -p $(PKG_BUILD_DIR)
+       cp -r $(PKG_SRC_DIR)/* $(PKG_BUILD_DIR)
+       $(Build/Patch)
 endef
 
 define Build/Configure
@@ -42,5 +45,10 @@ endef
 define Build/Compile
 endef
 
+# Install all our files, including our LuCI replacement files
+define Package/$(PKG_NAME)/install
+       $(INSTALL_DIR) $(1)/usr/lib/lua/luci
+       $(CP) ./luasrc/* $(1)/usr/lib/lua/luci
+endef
 
 $(eval $(call BuildPackage,luci-proto-modemmanager))
