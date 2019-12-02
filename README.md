@@ -1,5 +1,5 @@
 # luci-proto-modemmanager
-This luci-protocol adds support to set up and configure basic options for a modem using [ModemManager](https://gitlab.freedesktop.org/mobile-broadband/mobile-broadband-openwrt) and LuCI on OpenWrt.  Requires ModemManager.  Assumes a modem is installed and working.
+For OpenWrt 18.xx and below only.  Users of newer OpenWrt/LuCI versions should use the upstream version. This luci-protocol adds support to set up and configure basic options for a modem using [ModemManager](https://gitlab.freedesktop.org/mobile-broadband/mobile-broadband-openwrt) and LuCI on OpenWrt.  Requires ModemManager.  Assumes a modem is installed and working.
 
 ## Features
 * Automatically detects the modem
